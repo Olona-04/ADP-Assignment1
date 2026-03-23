@@ -1,7 +1,7 @@
 package za.ac.cput.Domain;
 
 /**
- * @author
+ * @author Aiden Wallace 222471174
  */
 
 import java.math.BigDecimal;
@@ -9,17 +9,19 @@ import java.time.LocalDateTime;
 
 public class Auction {
 
-        private final String auctionID;
-        private final String productID;
+        private final Long auctionID;
+        private final Long productID;
+        private final Long sellerID;
         private final BigDecimal startingPrice;
         private BigDecimal currentHighestBid;
-        private String currentHighestBidderId;
+        private Long currentHighestBidderId;
         private final LocalDateTime endTime;
         private boolean isActive;
 
         public Auction(Builder builder){
             this.auctionID = builder.auctionID;
             this.productID = builder.productID;
+            this.sellerID = builder.sellerID;
             this.startingPrice = builder.startingPrice;
             this.currentHighestBid = builder.currentHighestBid;
             this.currentHighestBidderId =builder.currentHighestBidderID;
@@ -29,21 +31,27 @@ public class Auction {
 
         //Builder class
         public static class Builder{
-            private String auctionID;
-            private String productID;
+            private Long auctionID;
+            private Long productID;
+            private Long sellerID;
             private BigDecimal startingPrice;
             private BigDecimal currentHighestBid;
-            private String currentHighestBidderID;
+            private Long currentHighestBidderID;
             private LocalDateTime endTime;
             private boolean isActive;
 
-            public Builder auctionID(String auctionID){
+            public Builder auctionID(Long auctionID){
                 this.auctionID =auctionID;
                 return this;
             }
 
-            public Builder productID(String productID){
+            public Builder productID(Long productID){
                 this.productID = productID;
+                return this;
+            }
+
+            public Builder sellerId(Long sellerID){
+                this.sellerID =sellerID;
                 return this;
             }
 
@@ -52,7 +60,7 @@ public class Auction {
                 return this;
             }
 
-            public Builder currentHighestBidderID(String currentHighestBidderID){
+            public Builder currentHighestBidderID(Long currentHighestBidderID){
                 this.currentHighestBidderID = currentHighestBidderID;
                 return this;
             }
@@ -78,14 +86,15 @@ public class Auction {
 
         }
         //getters
-        public String getAuctionID() {return auctionID;}
-        public String getProductID() {return productID;}
+        public Long getAuctionID() {return auctionID;}
+        public Long getProductID() {return productID;}
+        public Long getSellerID() {return sellerID;}
         public BigDecimal getStartingPrice() {return startingPrice;}
         public BigDecimal getCurrentHighestBid() {return currentHighestBid;}
-        public String getCurrentHighestBidderID() {return currentHighestBidderId;}
+        public Long getCurrentHighestBidderID() {return currentHighestBidderId;}
         public boolean isActive() {return isActive;}
 
-        public void placeBid(String bidder, BigDecimal bidPrice){
+        public void placeBid(Long bidder, BigDecimal bidPrice){
             if (!isActive) throw new IllegalStateException("Auction is not active");
             if (bidPrice.compareTo(startingPrice) <= 0) throw new IllegalArgumentException("Must be higher than current bid price");
             currentHighestBid = bidPrice;
