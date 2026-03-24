@@ -1,6 +1,6 @@
-package Factory;
+package za.ac.cput.Factory;
 
-import Domain.Order;
+import za.ac.cput.Domain.Order;
 
 import java.util.List;
 import java.util.UUID;

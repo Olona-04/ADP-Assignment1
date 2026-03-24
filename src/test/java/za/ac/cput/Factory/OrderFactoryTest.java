@@ -1,7 +1,8 @@
-package Factory;
+package za.ac.cput.Factory;
 
-import Domain.Order;
+import za.ac.cput.Domain.Order;
 import org.junit.jupiter.api.Test;
+
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;

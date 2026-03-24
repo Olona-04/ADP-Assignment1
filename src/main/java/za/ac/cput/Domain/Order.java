@@ -1,4 +1,4 @@
-package Domain;
+package za.ac.cput.Domain;
 
 import java.util.List;
 
