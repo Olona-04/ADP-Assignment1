@@ -1,7 +1,9 @@
 package za.ac.cput.Domain;
 
-public class Product {private String productId;
-    private String name;
+public class Product {
+
+    private String productId;
+    private String productName;
     private String description;
     private double price;
     private boolean isAuction;
@@ -11,7 +13,7 @@ public class Product {private String productId;
 
     public Product(Builder builder) {
         this.productId = builder.productId;
-        this.name = builder.name;
+        this.productName = builder.productName;
         this.description = builder.description;
         this.price = builder.price;
         this.isAuction = builder.isAuction;
@@ -21,8 +23,8 @@ public class Product {private String productId;
         return productId;
     }
 
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
     }
 
     public String getDescription() {
@@ -41,7 +43,7 @@ public class Product {private String productId;
     public String toString() {
         return "Product{" +
                 "productId='" + productId + '\'' +
-                ", name='" + name + '\'' +
+                ", productName='" + productName + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 ", isAuction=" + isAuction +
@@ -51,7 +53,7 @@ public class Product {private String productId;
     public static class Builder {
 
         private String productId;
-        private String name;
+        private String productName;
         private String description;
         private double price;
         private boolean isAuction;
@@ -61,8 +63,8 @@ public class Product {private String productId;
             return this;
         }
 
-        public Builder SetName(String name) {
-            this.name = name;
+        public Builder SetProductName(String productName) {
+            this.productName = productName;
             return this;
         }
 
