@@ -2,19 +2,17 @@ package za.ac.cput.repositoryImpl;
 
 import za.ac.cput.Domain.Order;
 import za.ac.cput.Repository.IOrderRepository;
-
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderRepository implements IOrderRepository {
     private static OrderRepository repository = null;
-    private Set<Order> orderDB;
+    private List<Order> orderDB;
 
     private OrderRepository() {
-        orderDB = new HashSet<>();
+        orderDB = new ArrayList<>();
     }
 
-    // Singleton Pattern
     public static OrderRepository getRepository() {
         if (repository == null) {
             repository = new OrderRepository();
@@ -24,9 +22,11 @@ public class OrderRepository implements IOrderRepository {
 
     @Override
     public Order create(Order order) {
-        boolean success = orderDB.add(order);
-        if (!success) return null;
-        return order;
+        if (read(order.getOrderId()) == null) {
+            orderDB.add(order);
+            return order;
+        }
+        return null;
     }
 
     @Override
@@ -53,13 +53,14 @@ public class OrderRepository implements IOrderRepository {
     @Override
     public boolean delete(String orderId) {
         Order orderToDelete = read(orderId);
-        if (orderToDelete == null) return false;
-        orderDB.remove(orderToDelete);
-        return true;
+        if (orderToDelete != null) {
+            return orderDB.remove(orderToDelete);
+        }
+        return false;
     }
 
     @Override
-    public Set<Order> getAll() {
+    public List<Order> getAll() {
         return orderDB;
     }
 }

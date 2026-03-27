@@ -1,4 +1,5 @@
-package za.ac.cput.Repository;
+package za.ac.cput;
+
 /**
  *
  * @author keano
@@ -6,11 +7,12 @@ package za.ac.cput.Repository;
 
 
 import za.ac.cput.Domain.Bid;
+import za.ac.cput.Repository.IBidRepository;
 import za.ac.cput.repositoryImpl.BidRepository;
 import za.ac.cput.Factory.BidFactory;
-
-
 import org.junit.jupiter.api.Test;
+
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BidRepositoryTest {
