@@ -1,4 +1,4 @@
-package za.ac.cput;
+package za.ac.cput.Repository;
 
 /**
  *
@@ -7,7 +7,6 @@ package za.ac.cput;
 
 
 import za.ac.cput.Domain.Bid;
-import za.ac.cput.Repository.IBidRepository;
 import za.ac.cput.repositoryImpl.BidRepository;
 import za.ac.cput.Factory.BidFactory;
 import org.junit.jupiter.api.Test;

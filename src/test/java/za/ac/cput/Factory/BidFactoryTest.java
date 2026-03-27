@@ -1,4 +1,4 @@
-package za.ac.cput;
+package za.ac.cput.Factory;
 
 /**
  *
@@ -10,7 +10,6 @@ import za.ac.cput.Domain.Bid;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.Factory.BidFactory;
 
 
 public class BidFactoryTest {
