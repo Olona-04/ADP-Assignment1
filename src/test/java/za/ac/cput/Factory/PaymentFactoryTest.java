@@ -10,13 +10,13 @@ class PaymentFactoryTest {
     @Test
     void createPayment() {
         Payment payment = PaymentFactory.createPayment(
-                "PAY123",
+                "PAY1",
                 150.0,
                 "CARD"
         );
 
         assertNotNull(payment, "Payment should not be null");
-        assertEquals("PAY123", payment.getPaymentId());
+        assertEquals("PAY1", payment.getPaymentId());
         assertEquals(150.0, payment.getAmount());
         assertEquals("CARD", payment.getPaymentMethod());
     }
@@ -59,7 +59,9 @@ class PaymentFactoryTest {
 
 
                 assertNull(payment1, "Amount cannot be zero");
+        System.out.println("Amount cannot be zero");
                 assertNull(payment2, "Amount cannot be negative");
+        System.out.println("Amount cannot be negative");
 
     }
 

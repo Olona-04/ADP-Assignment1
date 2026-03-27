@@ -1,10 +1,11 @@
-package za.ac.cput.repositoryImpl;
+package za.ac.cput.Repository;
 
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.Domain.Order;
 import za.ac.cput.Factory.OrderFactory;
+import za.ac.cput.repositoryImpl.OrderRepository;
 
 import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;

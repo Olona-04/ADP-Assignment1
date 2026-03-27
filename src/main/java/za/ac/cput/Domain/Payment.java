@@ -1,9 +1,13 @@
 package za.ac.cput.Domain;
+/**
+ * @author Zahrah Vermaak 221406395
+ */
 
 public class Payment {
     private final String paymentId;
     private final double amount;
     private final String paymentMethod;
+
 
     private Payment(Builder builder) {
         this.paymentId = builder.paymentId;
@@ -16,6 +20,15 @@ public class Payment {
 
     public String getPaymentMethod() {
         return paymentMethod;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "paymentId='" + paymentId + '\'' +
+                ", amount=" + amount +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                '}';
     }
 
     public static class Builder {

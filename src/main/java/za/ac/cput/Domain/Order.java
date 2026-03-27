@@ -1,4 +1,7 @@
 package za.ac.cput.Domain;
+/**
+ * @author Elona Sinjica
+ */
 
 import java.util.List;
 

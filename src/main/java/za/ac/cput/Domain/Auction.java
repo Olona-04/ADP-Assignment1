@@ -29,6 +29,17 @@ public class Auction {
             this.isActive = builder.isActive;
         }
 
+    @Override
+    public String toString() {
+        return "Auction{" +
+                "auctionId=" + auctionID +
+                ", productId=" + productID +
+                ", sellerId=" + sellerID +
+                ", startingPrice=" + startingPrice +
+                ", endTime=" + endTime +
+                '}';
+    }
+
         //Builder class
         public static class Builder{
             private Long auctionID;

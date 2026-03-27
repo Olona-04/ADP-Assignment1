@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.Domain.Product;
 import za.ac.cput.Factory.ProductFactory;
+import za.ac.cput.repositoryImpl.ProductRepository;
 
 import java.util.List;
 

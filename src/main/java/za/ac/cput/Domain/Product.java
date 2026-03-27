@@ -1,4 +1,7 @@
 package za.ac.cput.Domain;
+/**
+ * @author Olona Williams
+ */
 
 public class Product {
 

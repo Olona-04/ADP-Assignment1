@@ -19,6 +19,7 @@ class AddressFactoryTest {
         assertEquals("123 Main St", address.getStreet());
         assertEquals("Cape Town", address.getCity());
         assertEquals("8000", address.getPostalCode());
+        System.out.println(address);
     }
 
     @Test
